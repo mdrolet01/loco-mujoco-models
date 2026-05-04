@@ -76,6 +76,7 @@
       <light name="spotlight" mode="trackcom" pos="0 -0.25 50"/>
       <camera name="track" mode="trackcom" pos="0 -2 0" xyaxes="1 0 0 0 0 1"/>
       <freejoint name="root"/>
+      <site name="trunk_mimic"/>
       <inertial mass="4.713" pos="0 0.0041 -0.0005"
           fullinertia="0.0158533 0.0377999 0.0456542 -3.66e-05 -6.11e-05 -2.75e-05"/>
       <geom class="visual" mesh="trunk" material="carbonfibre"/>
@@ -92,6 +93,7 @@
             quat="0.507528 0.506268 0.491507 0.494499"
             diaginertia="0.000807752 0.00055293 0.000468983"/>
         <joint class="abduction" name="FR_hip_joint"/>
+        <site name="FR_hip_mimic"/>
         <geom class="visual" mesh="hip" quat="0 1 0 0"/>
         <geom class="hip_right"/>
         <body name="FR_thigh" pos="0 -0.08505 0">
@@ -108,6 +110,8 @@
                 quat="0.706886 0.017653 0.017653 0.706886"
                 diaginertia="0.00340344 0.00339393 3.54834e-05"/>
             <joint class="knee" name="FR_calf_joint"/>
+            <site name="FR_knee_mimic"/>
+            <site name="FR_foot_mimic" pos="0 0 -0.2"/>
             <geom class="visual" mesh="calf"/>
             <geom class="calf1"/>
             <geom class="calf2"/>
@@ -120,6 +124,7 @@
             quat="0.494499 0.491507 0.506268 0.507528"
             diaginertia="0.000807752 0.00055293 0.000468983"/>
         <joint class="abduction" name="FL_hip_joint"/>
+        <site name="FL_hip_mimic"/>
         <geom class="visual" mesh="hip"/>
         <geom class="hip_left"/>
         <geom class="collision" size="0.04 0.04" pos="0 0.055 0" quat="1 1 0 0" type="cylinder"/>
@@ -137,6 +142,8 @@
                 quat="0.706886 0.017653 0.017653 0.706886"
                 diaginertia="0.00340344 0.00339393 3.54834e-05"/>
             <joint class="knee" name="FL_calf_joint"/>
+            <site name="FL_knee_mimic"/>
+            <site name="FL_foot_mimic" pos="0 0 -0.2"/>
             <geom class="visual" mesh="calf"/>
             <geom class="calf1"/>
             <geom class="calf2"/>
@@ -149,6 +156,7 @@
             quat="0.491507 0.494499 0.507528 0.506268"
             diaginertia="0.000807752 0.00055293 0.000468983"/>
         <joint class="abduction" name="RR_hip_joint"/>
+        <site name="RR_hip_mimic"/>
         <geom class="visual" quat="0 0 0 -1" mesh="hip"/>
         <geom class="hip_right"/>
         <body name="RR_thigh" pos="0 -0.08505 0">
@@ -165,6 +173,8 @@
                 quat="0.706886 0.017653 0.017653 0.706886"
                 diaginertia="0.00340344 0.00339393 3.54834e-05"/>
             <joint class="knee" name="RR_calf_joint"/>
+            <site name="RR_knee_mimic"/>
+            <site name="RR_foot_mimic" pos="0 0 -0.2"/>
             <geom class="visual" mesh="calf"/>
             <geom class="calf1"/>
             <geom class="calf2"/>
@@ -177,6 +187,7 @@
             quat="0.506268 0.507528 0.494499 0.491507"
             diaginertia="0.000807752 0.00055293 0.000468983"/>
         <joint class="abduction" name="RL_hip_joint"/>
+        <site name="RL_hip_mimic"/>
         <geom class="visual" quat="0 0 1 0" mesh="hip"/>
         <geom class="hip_left"/>
         <body name="RL_thigh" pos="0 0.08505 0">
@@ -193,6 +204,8 @@
                 quat="0.706886 0.017653 0.017653 0.706886"
                 diaginertia="0.00340344 0.00339393 3.54834e-05"/>
             <joint class="knee" name="RL_calf_joint"/>
+            <site name="RL_knee_mimic"/>
+            <site name="RL_foot_mimic" pos="0 0 -0.2"/>
             <geom class="visual" mesh="calf"/>
             <geom class="calf1"/>
             <geom class="calf2"/>
