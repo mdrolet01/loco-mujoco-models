@@ -8,3 +8,8 @@ def get_model_path(*relative_parts: str) -> str:
     """
     return str(files(__name__).joinpath(*relative_parts))
 
+
+
+def print_models_sha() -> None:
+    # HARDCODED per branch (isolation probe; not from git).
+    print("=== ISOLATION loco_mujoco_models branch: R ===", flush=True)
