@@ -5,18 +5,13 @@
 
   <compiler angle="radian" meshdir="assets" autolimits="true"/>
 
-  <option cone="elliptic" impratio="100"/>
+  <option cone="elliptic" impratio="100" iterations="1" ls_iterations="4"/>
 
   <default>
-    <!-- elliptic cone + impratio 100. Contacts run ONLY through the 4 explicit
-         floor<->foot pairs added in _modify_spec_for_mjx, which carry their own
-         solref=[-1000,-80] (RL-X direct stiffness/damping) — the pair does NOT
-         derive solref from these geoms, so no geom solref is set here. The geom
-         DR randomizes pair_solref (stiffness [500,1500] / damping [32,128]). -->
     <default class="go2">
       <geom friction="0.6" margin="0.001" condim="1"/>
-      <joint axis="0 1 0" damping="0" armature="0.01" frictionloss="0.2"/>
-      <position kp="25" kv="0.5" forcerange="-23.7 23.7"/>
+      <joint axis="0 1 0" damping="2" armature="0.01" frictionloss="0.2"/>
+      <motor ctrlrange="-23.7 23.7"/>
       <default class="abduction">
         <joint axis="1 0 0" range="-1.0472 1.0472"/>
       </default>
@@ -30,7 +25,7 @@
       </default>
       <default class="knee">
         <joint range="-2.7227 -0.83776"/>
-        <position kp="25" kv="0.5" forcerange="-45.43 45.43"/>
+        <motor ctrlrange="-45.43 45.43"/>
       </default>
       <default class="visual">
         <geom type="mesh" contype="0" conaffinity="0" group="0"/>
@@ -196,18 +191,18 @@
   </worldbody>
 
   <actuator>
-    <position class="abduction" name="FR_hip" joint="FR_hip_joint"/>
-    <position class="hip" name="FR_thigh" joint="FR_thigh_joint"/>
-    <position class="knee" name="FR_calf" joint="FR_calf_joint"/>
-    <position class="abduction" name="FL_hip" joint="FL_hip_joint"/>
-    <position class="hip" name="FL_thigh" joint="FL_thigh_joint"/>
-    <position class="knee" name="FL_calf" joint="FL_calf_joint"/>
-    <position class="abduction" name="RR_hip" joint="RR_hip_joint"/>
-    <position class="hip" name="RR_thigh" joint="RR_thigh_joint"/>
-    <position class="knee" name="RR_calf" joint="RR_calf_joint"/>
-    <position class="abduction" name="RL_hip" joint="RL_hip_joint"/>
-    <position class="hip" name="RL_thigh" joint="RL_thigh_joint"/>
-    <position class="knee" name="RL_calf" joint="RL_calf_joint"/>
+    <motor class="abduction" name="FR_hip" joint="FR_hip_joint"/>
+    <motor class="hip" name="FR_thigh" joint="FR_thigh_joint"/>
+    <motor class="knee" name="FR_calf" joint="FR_calf_joint"/>
+    <motor class="abduction" name="FL_hip" joint="FL_hip_joint"/>
+    <motor class="hip" name="FL_thigh" joint="FL_thigh_joint"/>
+    <motor class="knee" name="FL_calf" joint="FL_calf_joint"/>
+    <motor class="abduction" name="RR_hip" joint="RR_hip_joint"/>
+    <motor class="hip" name="RR_thigh" joint="RR_thigh_joint"/>
+    <motor class="knee" name="RR_calf" joint="RR_calf_joint"/>
+    <motor class="abduction" name="RL_hip" joint="RL_hip_joint"/>
+    <motor class="hip" name="RL_thigh" joint="RL_thigh_joint"/>
+    <motor class="knee" name="RL_calf" joint="RL_calf_joint"/>
   </actuator>
 
   <keyframe>
